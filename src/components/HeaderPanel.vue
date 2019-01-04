@@ -1,10 +1,9 @@
 <template lang="pug">
   div.header
+    h2.header__text Заголовок
 </template>
 
 <script>
-//import MainMenu from './MainMenu.vue';
-
 export default {
   components: {
     
@@ -13,5 +12,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  
+.header {
+  border-bottom: 3px solid aqua;
+}
+.header__text {
+  text-align: center;
+  color: white;
+}
 </style>

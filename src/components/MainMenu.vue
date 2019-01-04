@@ -1,6 +1,5 @@
 <template lang="pug">
   div.main-menu
-    account-panel
     common-button Create
     common-button Record
     common-button Group
@@ -8,11 +7,10 @@
 
 <script>
 import CommonButton from './_common/CommonButton.vue';
-import AccountPanel from './AccountPanel.vue';
 
 export default {
   components: {
-    CommonButton, AccountPanel
+    CommonButton
   }
 }
 </script>

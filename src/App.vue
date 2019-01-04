@@ -1,15 +1,21 @@
 <template lang="pug">
   div.rootContainer
-    menu-panel.menu-panel
-    router-view.main-view
+    div.sidebar
+      account-panel.sidebar__account
+      main-menu.sidebar__main-menu
+    div.main-view
+      header-panel.main-view__header
+      router-view.main-view__router-view
 </template>
 
 <script>
-import MenuPanel from './components/MenuPanel.vue';
+import MainMenu from './components/MainMenu.vue';
+import HeaderPanel from './components/HeaderPanel.vue';
+import AccountPanel from './components/AccountPanel.vue';
 
 export default {
   components: {
-    MenuPanel
+    MainMenu, HeaderPanel, AccountPanel
   }
 }
 </script>
@@ -22,12 +28,26 @@ export default {
   align-items: stretch;
   min-height: 100%;
 }
-.menu-panel {
+.sidebar {
   flex-basis: 15%;
   background-color: rgb(70, 70, 70);
+
+  display: flex;
+  flex-direction: column;
 }
 .main-view {
   flex-basis: 85%;
   background-color: rgb(30, 30, 30);
+  padding: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__account {
+  flex-basis: 10%;
+}
+.main-view__header {
+  box-sizing: border-box;
+  flex-basis: 10%;
 }
 </style>
