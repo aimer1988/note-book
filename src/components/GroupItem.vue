@@ -12,18 +12,36 @@ export default {
 
 <style lang="scss" scoped>
 .group-item {
-  flex: 0 0 200px;
+  flex: 0 0;
 
-  min-width: 200px;
+  //min-width: 200px;
+  min-height: 200px;
   background-color: white;
   border-radius: 5px;
-  margin: 10px;
+  margin: 1%;
   cursor: pointer;
   box-sizing: border-box;
-  border: 3px solid white;
+  //border: 3px solid white;
 }
-.group-item:hover {
-  border: 3px solid blue;
+
+@media screen and (min-width: 320px) {
+  .group-item {
+    flex-basis: 98%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .group-item {
+    flex-basis: 48%;
+  }
+}
+@media screen and (min-width: 1224px) {
+  .group-item {
+    flex-basis: 18%;
+  }
+  .group-item:hover {
+    transform: scale(1.05);
+    transition: .2s;
+  }
 }
 </style>
 

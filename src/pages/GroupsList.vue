@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import GroupItem from '../components/GroupItem.vue';
 
 export default {
@@ -12,33 +13,13 @@ export default {
   },
   data () {
     return {
-      groupsList: [
-        {
-          id: 0,
-          title: 'group1'
-        },
-        {
-          id: 1,
-          title: 'group2'
-        },
-        {
-          id: 2,
-          title: 'group2'
-        },
-        {
-          id: 3,
-          title: 'group2'
-        },
-        {
-          id: 4,
-          title: 'group2'
-        },
-        {
-          id: 5,
-          title: 'group2'
-        }
-      ]
+
     }
+  },
+  computed: {
+    ...mapGetters('common', [
+      'groupsList'
+    ])
   }
 }
 </script>
@@ -47,9 +28,26 @@ export default {
 .groups-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 
+  box-sizing: border-box;
   padding: 10px 0;
-  margin: -10px;
+  margin: -1%;
+}
+
+@media screen and (min-width: 320px) {
+  .groups-list {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .groups-list {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1224px) {
+  .group-item {
+    justify-content: flex-start;
+  }
 }
 </style>
