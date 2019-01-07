@@ -1,6 +1,7 @@
 <template lang="pug">
   div.groups-list
     group-item(v-for="groupItem in groupsList" :key="groupItem.id")
+    group-item(:add-new-item="true")
 </template>
 
 <script>
